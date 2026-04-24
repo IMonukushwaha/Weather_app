@@ -1,0 +1,207 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+nav { display: flex; gap: 4px; }
+
+nav button {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+nav button:hover  { background: #334155; color: #e2e8f0; }
+nav button.active { background: #0ea5e9; color: #fff; }
+
+/* ── Tabs ── */
+.tab { display: none; padding: 1.5rem; max-width: 700px; margin: 0 auto; }
+.tab.active { display: block; }
+
+/* ── Home ── */
+#tab-home {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  text-align: center;
+}
+#tab-home.active { display: flex; }
+
+#clock {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+#date-display {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.tagline {
+  color: #475569;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* ── Inputs ── */
+input {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  color: #e2e8f0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input:focus { border-color: #0ea5e9; }
+input::placeholder { color: #475569; }
+
+.row { display: flex; gap: 0.6rem; }
+.row input { flex: 1; }
+
+/* ── Buttons ── */
+.btn {
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.btn:hover { background: #38bdf8; }
+.btn-red { background: #ef4444; }
+.btn-red:hover { background: #f87171; }
+
+/* ── Messages ── */
+.msg {
+  margin-top: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.msg-error   { background: rgba(239,68,68,0.1);  color: #f87171; }
+.msg-success { background: rgba(56,189,248,0.1); color: #38bdf8; }
+
+.muted { color: #475569; font-size: 0.85rem; }
+
+/* ── Weather Card ── */
+.weather-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.w-city { font-size: 1.8rem; font-weight: 700; color: #f1f5f9; }
+.w-country { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
+.w-desc { font-size: 0.85rem; color: #38bdf8; margin-top: 0.4rem; text-transform: capitalize; }
+
+.w-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.stat {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+.stat-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+.stat-value { font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2px; }
+
+.w-icon img { width: 80px; }
+.w-condition { font-size: 0.8rem; color: #94a3b8; text-align: center; margin-top: 4px; }
+
+/* ── History ── */
+.history-item {
+  background: #0f172a;
+  border-left: 3px solid #0ea5e9;
+  border-radius: 4px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-family: monospace;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2px solid #334155;
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 500px) {
+  .weather-card { flex-direction: column; }
+  #clock { font-size: 3.5rem; }
+}

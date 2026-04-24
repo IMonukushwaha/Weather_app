@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= appName %></title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo"> <%= appName %></div>
+    <nav>
+      <button class="active" data-tab="home">Home</button>
+      <button data-tab="weather">Weather</button>
+      <button data-tab="history">History</button>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="tab-home" class="tab active">
+    <div id="clock">00:00:00</div>
+    <div id="date-display"></div>
+    <p class="tagline">Your personal weather companion</p>
+  </section>
+
+  <!-- WEATHER -->
+  <section id="tab-weather" class="tab">
+    <div class="card">
+      <h2>Search Weather</h2>
+      <div class="row">
+        <input id="city-input" type="text" placeholder="Enter city name…" />
+        <button id="search-btn" class="btn">Search</button>
+      </div>
+      <div id="weather-msg"></div>
+    </div>
+    <div id="weather-result"></div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="tab-history" class="tab">
+    <div class="card" style="display:flex;justify-content:space-between;align-items:center">
+      <h2 style="margin:0">Search History</h2>
+      <button id="clear-btn" class="btn btn-red">Clear All</button>
+    </div>
+    <div id="history-list"><p class="muted">No history yet.</p></div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
