@@ -1,4 +1,4 @@
-# Smart Weather
+# Weather web
 
 A personal weather companion web app built with **Node.js**, **Express**, **EJS**, and **SQLite**. Search real-time weather for any city and keep a persistent history of all your searches stored in a local SQL database.
 
